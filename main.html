@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo/dice.png">
+    <title>Ludo</title>
+    <link rel="stylesheet" href="main.css">
+    
+    <script src="main.js"></script>
+    <script>
+        document.onmousemove = function(e){
+            var x = e.pageX;
+            var y = e.pageY;
+            e.target.title = "X is "+x+" and Y is "+y;
+            };
+    </script>
+</head>
+<body>
+    <div id="board">
+
+        <div class="way_home" id="red_way_home"></div>
+        <div class="way_home" id="green_way_home"></div>
+        <div class="way_home" id="blue_way_home"></div>
+        <div class="way_home" id="yellow_way_home"></div>
+
+        <div class="starting_block" id="red_starting_block"></div>
+        <div class="starting_block" id="green_starting_block"></div>
+        <div class="starting_block" id="blue_starting_block"></div>
+        <div class="starting_block" id="yellow_starting_block"></div>
+
+        <div class="partition vertical" id="p1"></div>
+        <div class="partition vertical" id="p2"></div>
+        <div class="partition vertical subpartition" id="vsp1"></div>
+        <div class="partition vertical subpartition" id="vsp2"></div>
+        <div class="partition vertical subpartition" id="vsp3"></div>
+        <div class="partition vertical subpartition" id="vsp4"></div>
+        <div class="partition vertical subpartition" id="vsp5"></div>
+        <div class="partition vertical subpartition" id="vsp6"></div>
+        <div class="partition vertical subpartition" id="vsp7"></div>
+        <div class="partition vertical subpartition" id="vsp8"></div>
+        <div class="partition vertical subpartition" id="vsp9"></div>
+        <div class="partition vertical subpartition" id="vsp10"></div>
+
+        <div class="partition horizontal" id="p3"></div>
+        <div class="partition horizontal" id="p4"></div>
+        <div class="partition horizontal subpartition" id="hsp1"></div>
+        <div class="partition horizontal subpartition" id="hsp2"></div>
+        <div class="partition horizontal subpartition" id="hsp3"></div>
+        <div class="partition horizontal subpartition" id="hsp4"></div>
+        <div class="partition horizontal subpartition" id="hsp5"></div>
+        <div class="partition horizontal subpartition" id="hsp6"></div>
+        <div class="partition horizontal subpartition" id="hsp7"></div>
+        <div class="partition horizontal subpartition" id="hsp8"></div>
+        <div class="partition horizontal subpartition" id="hsp9"></div>
+        <div class="partition horizontal subpartition" id="hsp10"></div>
+
+        <div class="goal" id="goal"></div>
+
+        <div class="home" id="red_home"></div>
+        <div class="home" id="blue_home"></div>
+        <div class="home" id="green_home"></div>
+        <div class="home" id="yellow_home"></div>
+
+        <div class="stoppage" id="stop1">*</div>
+        <div class="stoppage" id="stop2">*</div>
+        <div class="stoppage" id="stop3">*</div>
+        <div class="stoppage" id="stop4">*</div>
+
+        <div class="arrow" id="arrow1">____</div>
+        <div class="arrow" id="arrow2">____</div>
+        <div class="arrow" id="arrow3">____</div>
+        <div class="arrow" id="arrow4">____</div>
+
+        <div class="triangle" id="atri1">&#x25B2;</div>
+        <div class="triangle" id="atri2">&#x25B2;</div>
+        <div class="triangle" id="atri3">&#x25B2;</div>
+        <div class="triangle" id="atri4">&#x25B2;</div>
+
+        <div class="arrbox" id="abox1"></div>
+        <div class="arrbox" id="abox2"></div>
+        <div class="arrbox" id="abox3"></div>
+        <div class="arrbox" id="abox4"></div>
+
+        <div class="triangle" id="boxtri1">&#x25B2;</div>
+        <div class="triangle" id="boxtri2">&#x25B2;</div>
+        <div class="triangle" id="boxtri3">&#x25B2;</div>
+        <div class="triangle" id="boxtri4">&#x25B2;</div>
+
+        <div id="pieces">
+            <div id="red">
+                <button class="pieces red inactive lock" id="r1" onclick="change_position(101)"></button>
+                <button class="pieces red inactive lock" id="r2" onclick="change_position(102)"></button>
+                <button class="pieces red inactive lock" id="r3" onclick="change_position(103)"></button>
+                <button class="pieces red inactive lock" id="r4" onclick="change_position(104)"></button>
+            </div>
+            <div id="blue">
+                <button class="pieces blue inactive lock" id="b1" onclick="change_position(201)"></button>
+                <button class="pieces blue inactive lock" id="b2" onclick="change_position(202)"></button>
+                <button class="pieces blue inactive lock" id="b3" onclick="change_position(203)"></button>
+                <button class="pieces blue inactive lock" id="b4" onclick="change_position(204)"></button>
+            </div>
+            <div id="green">
+                <button class="pieces green inactive lock" id="g1" onclick="change_position(301)"></button>
+                <button class="pieces green inactive lock" id="g2" onclick="change_position(302)"></button>
+                <button class="pieces green inactive lock" id="g3" onclick="change_position(303)"></button>
+                <button class="pieces green inactive lock" id="g4" onclick="change_position(304)"></button>
+            </div>
+            <div id="yellow">
+                <button class="pieces yellow inactive lock" id="y1" onclick="change_position(401)"></button>
+                <button class="pieces yellow inactive lock" id="y2" onclick="change_position(402)"></button>
+                <button class="pieces yellow inactive lock" id="y3" onclick="change_position(403)"></button>
+                <button class="pieces yellow inactive lock" id="y4" onclick="change_position(404)"></button>
+            </div>
+        </div>
+        
+    </div>
+    
+    <button id="start" type="button" onclick="start_game()">Start!</button>
+    <button id="dice" type="button" onclick="generate_number()" disabled>ROLL THE DICE!</button>
+    <form>
+        <fieldset id="field" disabled></fieldset>
+    </form>
+</body>
+</html>
